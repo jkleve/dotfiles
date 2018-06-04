@@ -1,0 +1,15 @@
+links:
+  - ~/.bash_user: bash/profile.bash
+  - ~/.gitconfig: git/gitconfig
+  - ~/.gitignore: git/gitignore_global
+  - ~/.tmux.conf: tmux/tmux.conf
+  - ~/.vimrc: vim/vimrc
+  - ~/.vim: vim/vimrcs
+
+appends:
+  - ~/.bashrc: "[ -f ~/.bash_user ] && source ~/.bash_user"
+  - ~/.bash_local: ["for DOTFILE in \"$DOTFILES\"/../.work-dotfiles/{efsw.bash}; do",
+                    "  [ -f \"$DOTFILE\" ] && source \"$DOTFILE\"",
+                    "done\n"]
+
+force_link: yes
