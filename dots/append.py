@@ -18,7 +18,7 @@ def append_text_to(filename, text, duplicate=False):
             file.write('\n{}\n'.format(text))
 
 
-def append_to_files(append_actions):
+def append_to_files(append_actions):  # TODO substitute dictionary to have variables in yaml
     """
     append_actions = (('~/.bashrc', '[ -f ~/.bash_profile ] && source ~/.bash_profile'),)
 
