@@ -57,13 +57,16 @@ def main(args):
 
     if args.dotfiles:
         dotfiles = os.path.expanduser(args.dotfiles)
-        if not os.path.lexists(dotfiles):
-            logging.error('Dotfiles not found at "{}"'.format(dotfiles))
-            return errno.ENOENT
+    else:
+        dotfiles = os.getenv('DOTFILES')
+    if not os.path.lexists(dotfiles):
+        logging.error('Dotfiles not found at "{}"'.format(dotfiles))
+        return errno.ENOENT
 
     force_link = True if args.force_link is True else config.get('force_link', False)
 
     if args.command == 'install':
+        append_to_files((({'~/.bash_local': 'export DOTFILES={}'.format(dotfiles)}),))  # DOTFILES is defined first
         link_files(config['links'], force_link)
         append_to_files(config['appends'])
 
