@@ -5,6 +5,8 @@ set -o vi
 # If non-interactive shell, exit
 [ -z "$PS1" ] && return
 
-# If ~/.bashrc exists, source it
-[ -f "${HOME}/.bashrc" ] && source ${HOME}/.bashrc
-
+# If ~/.bash_local exists, source it
+if [ -f "${HOME}/.bash_local" ]; then
+    source ${HOME}/.bash_local
+    [ -f "${DOTFILES}/bash/bashrc.bash" ] && source ${DOTFILES}/bash/bashrc.bash
+fi
