@@ -3,17 +3,17 @@
 "call add(g:pathogen_disabled, 'tagbar')
 "execute pathogen#infect()
 
-source ~/.vim/vimrcs/vundlerc.vim
+source ~/.vim/vundlerc.vim
 
 set runtimepath+=~/.vim
 
-source ~/.vim/vimrcs/basic.vim
-source ~/.vim/vimrcs/filetypes.vim
-"source ~/.vim/vimrcs/plugins_config.vim
-source ~/.vim/vimrcs/extended.vim
+source ~/.vim/basic.vim
+source ~/.vim/filetypes.vim
+"source ~/.vim/plugins_config.vim
+source ~/.vim/extended.vim
 
 try
-    source ~/.vim/vimrcs/my_configs.vim
+    source ~/.vim/my_configs.vim
 catch
 endtry
 
