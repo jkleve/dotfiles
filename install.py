@@ -40,7 +40,7 @@ def get_config(config_filename):  # TODO error handling
 
 
 def dotfiles_variable_missing_help():
-    return '''DOTFILES or -d|--dotfiles <dotfiles> not set correctly. 
+    return '''DOTFILES or -d|--dotfiles <dotfiles> not set correctly.
  Options when running install.py:
   $ DOTFILES=~/.dotfiles ./install.py
   $ ./install.py -d ~/.dotfiles'''
@@ -59,6 +59,10 @@ def main(args):
         dotfiles = os.path.expanduser(args.dotfiles)
     else:
         dotfiles = os.getenv('DOTFILES')
+
+    if not dotfiles:
+        logging.error('No dotfiles specified. Used -d <dotfiles> or set the DOTFILES environmental variable')
+
     if not os.path.lexists(dotfiles):
         logging.error('Dotfiles not found at "{}"'.format(dotfiles))
         return errno.ENOENT
