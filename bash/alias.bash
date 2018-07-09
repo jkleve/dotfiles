@@ -216,3 +216,5 @@ alias ta="tmux attach || tmux attach -t || tn"
 
 # Minecraft
 alias minecraft="java -jar /opt/Minecraft.jar 2>&1 > /dev/null"
+
+alias vi="vim"
