@@ -87,3 +87,12 @@ update_time() {
     esac
 }
 
+wifi-conn() {
+    if [ -z "$1" ]; then
+        echo "wifi-conn <ssid> <password>"
+    fi
+    if [ -z "$2" ]; then
+        echo "wifi-conn <ssid> <password>"
+    fi
+    nmcli dev wifi connect "$1" --password "$2"
+}
