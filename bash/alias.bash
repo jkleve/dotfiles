@@ -115,7 +115,7 @@ alias volume='pavucontrol'
 alias bluetooth='bluetoothctl'
 
 # ls
-alias ls='ls -NF --color=auto'
+alias ls='LC_COLLATE=C ls -NF --color=auto'
 alias l='ls -lFh --color=auto'
 alias ll='l'
 alias lsl='ls -lFhN'
