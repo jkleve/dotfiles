@@ -29,3 +29,5 @@ HISTSIZE=20000
 HISTFILESIZE=20000
 
 LD_LIBRARY_PATH=/usr/local/lib
+
+export TZ=America/Denver
