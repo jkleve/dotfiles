@@ -1,5 +1,7 @@
 # .bash_alias
 
+alias vi="vim"
+
 # Re-source
 alias bashrc='vi ~/.bashrc && source ~/.bashrc'
 alias rload='source ~/.bashrc'
@@ -14,29 +16,14 @@ alias ealias="vi ${DOTFILES}/bash/alias.bash"
 alias version?='dnf info'
 #alias update='sudo dnf upgrade' # moved to a script
 
-alias bedtime='sydo systemctl suspend'
-alias sl='sleeptimer'
+alias bedtime='sudo systemctl suspend'
 
 # filesystem
-alias fs='df -hT'
-alias watch-fs='watch -d -n 2 "df -hT"'
-alias watchfs='watch-fs'
-alias wfs='watch-fs'
+alias df='df -hT'
 alias backup='rsync -avibue "ssh" --delete --delete-excluded --exclude-from=/home/jesse/.dotfiles/rsync/rsync_excludes.conf ~/ pi@10.0.0.162:/media/external_drive/jesse-hp_backup $*'
 
 # ssh
-#alias pi='ssh pi@192.168.2.11'
-alias pi='ssh 10.0.0.163'
-alias remote='ssh -p 3642 jesse@jessekleve.ddns.net'
-alias aere-connect='ssh -p 22 jkleve@hpc-class.its.iastate.edu'
-alias start-ssh-agent='eval "$(ssh-agent -s)"'
-alias ssh-keys='cat ~/.dotfiles/info/ssh-keys'
-alias ssh-vnc='ssh -p 3642 -L 5901:localhost:5901 -N -f -l vncuser jessekleve.ddns.net'
-alias aws='ssh -i ~/.ssh/aws_connect.pem ubuntu@ec2-54-149-51-131.us-west-2.compute.amazonaws.com'
-alias ssh-git='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/git'
-
-# git
-alias gitl="git lg | less"
+alias pi='ssh raspberrypi'
 
 # network
 #alias internet-restart='sudo /etc/init.d/network-manager restart'
@@ -76,6 +63,8 @@ alias pdf='evince'
 # games
 alias tetris='bastet'
 alias dungeon='nethack'
+# Minecraft
+alias minecraft="java -jar /opt/Minecraft.jar 2>&1 > /dev/null"
 # tree
 alias tree='tree -FC'
 # less is NOT more, but it is...
@@ -87,11 +76,8 @@ alias h='history | tail -20'
 alias weather='curl wttr.in/denver'
 alias fore='forecast'
 alias cast='forecast'
-alias temp='weather-app 50014 -t'
+alias temp='weather-app 80211 -t'
 
-alias a='alsamixer'
-alias ac='aere-connect'
-alias b='bedtime'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage\|time to empty"'
 alias directory-size='du -sch'
 alias dir-size='directory-size'
@@ -133,24 +119,6 @@ alias lss='ls-size'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias etc='cd /etc'
-alias bin='cd ~/bin'
-#alias code='cd ~/Code'
-alias projects='cd ~/Code/projects'
-alias proj='projects'
-alias docs='cd ~/Documents'
-alias dotfiles='cd ~/.dotfiles'
-alias dot='dotfiles'
-alias down='cd ~/Downloads'
-#alias dropbox='cd ~/Dropbox'
-#alias dbox='dropbox'
-alias music='cd ~/Music'
-alias pictures='cd ~/Pictures'
-alias picts='pictures'
-alias pics='pictures'
-alias school='cd ~/School'
-alias videos='cd ~/Videos'
-alias vids='videos'
 
 # dirs, pushd, popd
 alias dirs='dirs -v'
@@ -165,27 +133,7 @@ alias remake='make clean all'
 #alias send='sudo python send_power.py'
 #alias ground='sudo python3 ground_station.py'
 alias clean='make clean'
-alias quad='cd /home/jesse/code/quadcopter/quaddrone'
-alias py='python'
-alias py3='python3'
 alias sloc='cloc'
-# wlist
-alias wlist='cd ~/Code/meteor/wishlist'
-alias wlist-start='wlist && meteor run -p 192.168.0.26:3000'
-# git
-alias status='git status -uno'
-
-# school classes
-alias 344='cd ~/School/aere344'
-alias 421='cd ~/School/aere421'
-alias 462='cd ~/School/aere462'
-alias 468='cd ~/School/aere468'
-alias 490='cd ~/School/coms490'
-alias o344='cd ~/School/aere344; o'
-alias o421='cd ~/School/aere421; o'
-alias o462='cd ~/School/aere462; o'
-alias o468='cd ~/School/aere468; o'
-alias o490='cd ~/School/coms490; o'
 
 # dhcp
 alias dhcp-clients='watch -d -n 2 "cat /var/lib/dhcpd/dhcpd.leases"'
@@ -213,8 +161,3 @@ alias tl="tmux ls"
 alias tk="tmux kill-session -t"
 alias tn="tmux new-session -s || tmux new-session -s main"
 alias ta="tmux attach || tmux attach -t || tn"
-
-# Minecraft
-alias minecraft="java -jar /opt/Minecraft.jar 2>&1 > /dev/null"
-
-alias vi="vim"
