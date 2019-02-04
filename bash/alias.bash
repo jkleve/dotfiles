@@ -12,6 +12,8 @@ alias vimrc='vi ~/.vimrc'
 alias i3rc='vi ~/.config/i3/config'
 alias ealias="vi ${DOTFILES}/bash/alias.bash"
 
+alias c=clear
+
 # dnf
 alias version?='dnf info'
 #alias update='sudo dnf upgrade' # moved to a script
