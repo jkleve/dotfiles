@@ -1,0 +1,106 @@
+# .bash_alias
+
+alias vi="vim"
+
+alias c=clear
+
+# filesystem
+alias df='df -hT'
+
+# network
+#alias internet-restart='sudo /etc/init.d/network-manager restart'
+alias internet-restart='systemctl restart NetworkManager'
+alias ir='internet-restart'
+alias open-ports='sudo nmap -sT -O localhost'
+alias op='open-ports'
+alias socket='ss -ltp | grep ' # print open ports with socket number
+alias wifi-scan='nmcli dev wifi list'
+alias wifi='wifi-scan'
+alias public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# google music
+alias gmusic='playmusiccl'
+alias alsa='alsamixer'
+alias audio='alsamixer'
+alias a='audio'
+alias sound-cards='arecord -l'
+# open files
+alias pdf='evince'
+# games
+alias tetris='bastet'
+alias dungeon='nethack'
+# Minecraft
+alias minecraft="java -jar /opt/Minecraft.jar 2>&1 > /dev/null"
+# tree
+alias tree='tree -FC'
+# less is NOT more, but it is...
+alias less='less -Ri' # R = raw (ANSI colors). i = case in-sensitive on searches
+alias h='history | tail -20'
+
+# weather
+#alias forecast='weather-app 50014 -f'
+alias weather='curl wttr.in/denver'
+alias fore='forecast'
+alias cast='forecast'
+alias temp='weather-app 80211 -t'
+
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage\|time to empty"'
+#alias gpu='lspci -nnk | grep -i vga -A3'
+#aliad gpu='lspci-vnnn | grep -i vga -A3'
+alias gpu='glxinfo | egrep "OpenGL vendor|OpenGL renderer"'
+alias speed-test='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias st='speed-test'
+alias volume='pavucontrol'
+alias bluetooth='bluetoothctl'
+
+# ls
+alias ls='LC_COLLATE=C ls -FG'
+alias l='ls -lFGh'
+alias ll='l'
+alias lsl='ls -lFh'
+alias lsla='ls -lFAh'
+alias lla='ls -lFAh'
+alias llA='ls -lFah'
+alias lA='ls -FA'
+alias lsf="ls -lh | grep -E '([0-9]+(M|G)+)*'"
+alias lsfa="ls-lha | grep -E '([0-9]+(M|G)+)*'"
+alias lsd='ls -lthr'
+alias ls-size='ls -lShr'
+alias lss='ls-size'
+
+# directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# dirs, pushd, popd
+alias dirs='dirs -v'
+
+# programming aliases
+alias remake='make clean all'
+alias clean='make clean'
+alias sloc='cloc'
+
+# radio
+alias 70s='mplayer http://listen.radionomy.com:80/1HITS70s'
+alias 80s='mplayer http://23.92.61.227:9000/stream.mp3'
+alias 90s='mplayer http://46.105.108.89:8000'
+alias 90shit='mplayer http://listen.radionomy.com:80/1HITS90s'
+alias ibiza='mplayer http://198.105.220.12:9623/Live'
+alias top40='mplayer http://listen.shoutcast.com:80/RadioHunter-TheHitzChannel'
+alias blues='mplayer http://185.33.21.112:11041'
+alias alternative='mplayer http://69.46.78.178:80'
+
+# tv
+alias airport='livestreamer http://www.ustream.tv/channel/%E5%A4%A7%E9%98%AA%E7%A9%BA%E6%B8%AFhd%E3%83%A9%E3%82%A4%E3%83%96%E3%82%AB%E3%83%A1%E3%83%A9 best'
+alias iss='livestreamer http://www.ustream.tv/channel/iss-hdev-payload best'
+
+# gpu
+alias gpu-in-use="lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA"
+alias gpu-drivers="lspci -nnk | grep -i vga -A3 | grep 'in use'"
+
+# tmux
+alias tl="tmux ls"
+alias tk="tmux kill-session -t"
+alias tn="tmux new-session -s || tmux new-session -s main"
+alias ta="tmux attach || tmux attach -t || tn"
