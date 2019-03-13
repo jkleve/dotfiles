@@ -65,11 +65,15 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(colorize git vi-mode zsh-syntax-highlighting)
 
+[ -f $HOME/.zsh_local ] && source $HOME/.zsh_local
 source $DOTFILES/zsh/zsh_alias
 source $ZSH/oh-my-zsh.sh
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
+unsetopt AUTO_PUSHD
+export TZ=America/Denver
+export HIST_STAMPS="[%m/%d %H:%M]" # @todo not working
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
