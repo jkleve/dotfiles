@@ -53,17 +53,22 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="[%m/%d %H:%M]"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Set '-CC' option for iTerm2 tmux integration
+ZSH_TMUX_ITERM2=true
+
+RPROMPT='$(battery_pct_prompt)'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colorize git vi-mode zsh-syntax-highlighting)
+plugins=(battery colorize django git httpie iterm2 tmux vi-mode zsh-syntax-highlighting)
 
 [ -f $HOME/.zsh_local ] && source $HOME/.zsh_local
 source $DOTFILES/zsh/zsh_alias
@@ -73,7 +78,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 unsetopt AUTO_PUSHD
 export TZ=America/Denver
-export HIST_STAMPS="[%m/%d %H:%M]" # @todo not working
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
