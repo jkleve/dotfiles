@@ -2,7 +2,7 @@
 #
 # Most used alias'
 
-alias vi="vim"
+alias vi="nvim"
 alias nvi="nvim"
 
 # Re-source

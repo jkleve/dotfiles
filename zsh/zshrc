@@ -72,8 +72,8 @@ plugins=(battery colorize django git httpie iterm2 tmux vi-mode zsh-syntax-highl
 
 [ -f $HOME/.zsh_local ] && source $HOME/.zsh_local
 source $DOTFILES/zsh/zsh_alias
+#source $DOTFILES/bash/alias.bash
 source $ZSH/oh-my-zsh.sh
-#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 setopt no_share_history
