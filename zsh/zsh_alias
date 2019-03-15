@@ -33,6 +33,10 @@ alias dungeon='nethack'
 alias minecraft="java -jar /opt/Minecraft.jar 2>&1 > /dev/null"
 # tree
 alias tree='tree -FC'
+trees() {
+    tree "$@" | less
+}
+
 # less is NOT more, but it is...
 alias less='less -Ri' # R = raw (ANSI colors). i = case in-sensitive on searches
 alias h='history | tail -20'
