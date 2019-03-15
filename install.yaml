@@ -1,6 +1,7 @@
 links:
   - ~/.bash_user: bash/profile.bash
   - ~/.gitconfig: git/gitconfig
+  - ~/.config/nvim/init.vim: nvim/init.vim
   - ~/.tmux.conf: tmux/tmux.conf
   - ~/.vimrc: vim/vimrc
   - ~/.vim: vim/vimrcs
