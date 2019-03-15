@@ -36,9 +36,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive' " git commands (Gdiff, Gblame, etc.)
 Plug 'tpope/vim-sleuth' " smart expandtab
 Plug 'tpope/vim-repeat' " better . (repeat)
-Plug 'https://github.com/junegunn/vim-github-dashboard.git' " github events
+Plug 'junegunn/vim-github-dashboard.git' " github events
 
-" Initialize plugin system
 call plug#end()
 
 
