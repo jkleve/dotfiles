@@ -68,7 +68,7 @@ RPROMPT='$(battery_pct_prompt)'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(battery colorize django git httpie iterm2 tmux vi-mode zsh-syntax-highlighting)
+plugins=(battery colorize django dotenv git httpie iterm2 tmux vi-mode zsh-syntax-highlighting)
 
 [ -f $HOME/.zsh_local ] && source $HOME/.zsh_local
 source $DOTFILES/zsh/zsh_alias
