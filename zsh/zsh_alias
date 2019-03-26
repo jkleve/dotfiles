@@ -1,6 +1,6 @@
 # .bash_alias
 
-alias vi="vim"
+alias vi="nvim"
 
 alias c=clear
 
