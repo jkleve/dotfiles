@@ -1,0 +1,2 @@
+* * * * * istats | egrep 'CPU temp|Current charge' | tr -s '[:space:]' ';' | cut -d ';' -f 3,10 > ~/.pc_stats 2>&1
+
