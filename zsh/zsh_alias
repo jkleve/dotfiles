@@ -112,6 +112,10 @@ alias ta="tmux attach || tmux attach -t || tn"
 # kubernetes
 alias kctl="kubectl"
 
+# docker
+alias d="docker"
+alias dc="docker-compose"
+
 #############
 # Functions #
 #############
