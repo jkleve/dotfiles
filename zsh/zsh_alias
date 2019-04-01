@@ -109,6 +109,8 @@ alias tk="tmux kill-session -t"
 alias tn="tmux new-session -s || tmux new-session -s main"
 alias ta="tmux attach || tmux attach -t || tn"
 
+# kubernetes
+alias kctl="kubectl"
 
 #############
 # Functions #
