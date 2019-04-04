@@ -19,6 +19,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-scripts/indentpython.vim' " cleans auto-indent
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
+Plug 'godlygeek/tabular'
 
 " Movements
 Plug 'easymotion/vim-easymotion'
