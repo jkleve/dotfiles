@@ -28,6 +28,9 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 
+" Syntax
+plug 'Neui/cmakecache-syntax.vim'
+
 " Themes
 Plug 'morhetz/gruvbox'
 
