@@ -120,5 +120,7 @@ alias dc="docker-compose"
 # Functions #
 #############
 web2mp4() {
-    ffmpeg -i "$1" -qscale 0 ${1%.webm}.mp4
+    for f in "$@"; do
+        ffmpeg -i "$f" -qscale 0 "${f%.webm}.mp4"
+    done
 }
