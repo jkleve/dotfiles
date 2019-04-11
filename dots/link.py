@@ -49,6 +49,9 @@ def symlink(source, link_name, force_link=False):
         return 1
 
     if not os.path.lexists(link_name):
+        parent = os.path.dirname(link_name)
+        if not os.path.exists(parent):
+            os.makedirs(parent)
         os.symlink(source, link_name)
 
     else:
