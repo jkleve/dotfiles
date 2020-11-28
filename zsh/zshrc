@@ -13,6 +13,7 @@ if [[ -n ${TERM_PROGRAM} ]]; then
 else
     ZSH_THEME="powerlevel9k/powerlevel9k"
     POWERLEVEL9K_MODE='nerdfont-complete' # nerf fonts (Sauce Code Light)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 fi
 
 # Set list of themes to pick from when loading at random
