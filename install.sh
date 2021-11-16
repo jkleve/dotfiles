@@ -6,6 +6,7 @@ DOTFILES_DIR="${HOME}/.dotfiles"
 link_files() {
     pushd $HOME
     ln -sf ${DOTFILES_DIR}/git/gitconfig .gitconfig
+    ln -sf ${DOTFILES_DIR}/input/inputrc .inputrc
     ln -sf ${DOTFILES_DIR}/tmux/tmux.conf .tmux.conf
     ln -sf ${DOTFILES_DIR}/zsh/zshrc .zshrc
     popd

@@ -1,2 +1,7 @@
+$include /etc/inputrc
+
 set editing-mode vi
 set keymap vi
+
+# Ignore case sensitive when using tab-completion (ie cd lase<tab> -> Laser)
+set completion-ignore-case On
