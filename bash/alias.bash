@@ -2,7 +2,7 @@
 #
 # Most used alias'
 
-alias vi="nvim"
+# alias vi="nvim"
 alias nvi="nvim"
 
 # Re-source
@@ -19,13 +19,13 @@ alias less='less -Ri' # R = raw (ANSI colors). i = case in-sensitive on searches
 alias h='history | tail -20'
 
 # ls
-alias ls='LC_COLLATE=C ls -FG'
+alias ls='LC_COLLATE=C ls -F'
 alias l='ls -lFGh'
 alias ll='l'
 alias lsl='ls -lFh'
 alias lsla='ls -lFAh'
-alias lla='ls -lFAh'
-alias llA='ls -lFah'
+alias lla='ls -lFah'
+alias llA='ls -lFAh'
 alias lA='ls -FA'
 alias lsf="ls -lh | grep -E '([0-9]+(M|G)+)*'"
 alias lsfa="ls-lha | grep -E '([0-9]+(M|G)+)*'"

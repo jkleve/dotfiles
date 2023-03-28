@@ -10,6 +10,7 @@ export TERM=xterm-256color
 export LD_LIBRARY_PATH=/usr/local/lib
 
 export TZ=America/Denver
+export DOCKER_BUILDKIT=1
 
 MY_BASH_BLUE="\033[0;34m" #Blue
 MY_BASH_NOCOLOR="\033[0m"
