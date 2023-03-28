@@ -12,6 +12,16 @@ link_files() {
     popd
 }
 
+configure_vim() {
+    # @todo test
+    # @todo call if advance install
+    pushd $HOME
+    ln -sf ${DOTFILES_DIR}/vim/vimrc .vimrc
+    ln -sf ${DOTFILES_DIR}/vim/vimrcs .vim
+    cd ${DOTFILES_DIR}/vim && ./vundle.sh
+    popd
+}
+
 main() {
     if [ -d "$DOTFILES_DIR" ]; then
         rm -rf $DOTFILES_DIR

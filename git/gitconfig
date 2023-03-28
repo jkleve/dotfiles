@@ -1,6 +1,7 @@
 [user]
 	email = jesse.kleve@gmail.com
 	name = Jesse Kleve
+	signingkey = 41CE29B40D577566
 [push]
 	default = simple
 [core]
@@ -199,3 +200,5 @@
 	lg = !"git lg2"
 [pull]
 	ff = only
+[init]
+	defaultBranch = main

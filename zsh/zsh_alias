@@ -106,8 +106,8 @@ alias gpu-drivers="lspci -nnk | grep -i vga -A3 | grep 'in use'"
 # tmux
 alias tl="tmux ls"
 alias tk="tmux kill-session -t"
-alias tn="tmux new-session -s || tmux new-session -s main"
-alias ta="tmux attach || tmux attach -t || tn"
+alias tn="tmux new-session -s"
+alias ta="tmux attach -t"
 
 # kubernetes
 alias kctl="kubectl"
