@@ -110,7 +110,7 @@ alias tn="tmux new-session -s"
 alias ta="tmux attach -t"
 
 # kubernetes
-alias kctl="kubectl"
+alias k="kubectl"
 
 # docker
 alias d="docker"
