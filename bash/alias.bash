@@ -52,3 +52,5 @@ alias rcp="rsync -avz --progress -h"
 alias rmv="rsync -avz --progress -h --remove-source-files"
 alias rsync-update="rsync -avzu --progress -h"
 alias rsync-sync="rsync -avzu --delete --progress -h"
+
+alias k=kubectl
