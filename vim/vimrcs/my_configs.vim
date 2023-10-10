@@ -68,6 +68,12 @@ set cmdheight=1
  
 " Highlight current line
 set cursorline
+
+" Set line numbers
+set number
+
+" Set relative line numbers
+set relativenumber
  
 " disable auto comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
