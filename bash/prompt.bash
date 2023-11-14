@@ -1,5 +1,65 @@
 # .bash_prompt
 
+main_prompt() {
+    local exit_code=$?
+
+    # Source for git information in prompt
+    if [ "${HIDE_GIT_PS1}" != "1" -a -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+        source /usr/share/git-core/contrib/completion/git-prompt.sh
+        GIT_PS1_SHOWDIRTYSTATE=1
+        GIT_PS1_SHOWSTASHSTATE=1
+        GIT_PS1_SHOWUNTRACKEDFILES=1
+        #  GIT_PS1_SHOWUPSTREAM="verbose legacy git"
+        GIT_PS1_DESCRIBE_STYLE=default
+        #  GIT_PS1_SHOWCOLORHINTS=1
+    else
+        __git_ps1()
+        {
+          : # Git is not installed so stub out function
+        }
+    fi
+
+    # Set terminal colours
+    BASE03=$(tput setaf 234)
+    BASE02=$(tput setaf 235)
+    BASE01=$(tput setaf 240)
+    BASE00=$(tput setaf 241)
+    BASE0=$(tput setaf 244)
+    BASE1=$(tput setaf 245)
+    BASE2=$(tput setaf 254)
+    BASE3=$(tput setaf 230)
+    YELLOW=$(tput setaf 136)
+    ORANGE=$(tput setaf 166)
+    RED=$(tput setaf 160)
+    MAGENTA=$(tput setaf 125)
+    VIOLET=$(tput setaf 61)
+    BLUE=$(tput setaf 33)
+    CYAN=$(tput setaf 37)
+    GREEN=$(tput setaf 64)
+    BOLD=$(tput bold)
+    RESET=$(tput sgr0)
+
+    # If we're root, then let's see red
+    if [ ${EUID} -eq 0 ] ; then
+        USER_COLOUR="${RED}"
+    else
+        USER_COLOUR="${GREEN}"
+    fi
+
+    export PS1="\[${RESET}\][\[${BASE0}\]\A\[${RESET}\] \[${USER_COLOUR}\]\u"
+
+    # Check if we're local or remote
+    if [[ -n "${SSH_CLIENT}" || -n "${SSH_TTY}" ]] ; then
+        # Prompt with hostname
+        PS1+="@\h"
+    fi
+    PS1+=" \[${CYAN}\]\w\[${YELLOW}\]\$(__git_ps1 \" (%s)\")\[${RESET}\]"
+    if [ $exit_code -ne 0 ]; then
+        PS1+=" ${RED}$exit_code${RESET} "
+    fi
+    PS1+="]\\$\[${RESET}\] "
+}
+
 
 # jesse-hp prompt config
 if [ $HOSTNAME = "jesse-hp" ]; then
@@ -51,59 +111,7 @@ elif [ $HOSTNAME = "raspberrypi" ]; then
 
     PS1="${GREEN}\u@\h ${BLUE}\w \n\A \$ ${RESET}"
 else
-    # Source for git information in prompt
-    if [ "${HIDE_GIT_PS1}" != "1" -a -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-      source /usr/share/git-core/contrib/completion/git-prompt.sh
-      GIT_PS1_SHOWDIRTYSTATE=1
-      GIT_PS1_SHOWSTASHSTATE=1
-      GIT_PS1_SHOWUNTRACKEDFILES=1
-    #  GIT_PS1_SHOWUPSTREAM="verbose legacy git"
-      GIT_PS1_DESCRIBE_STYLE=default
-    #  GIT_PS1_SHOWCOLORHINTS=1
-    else
-      __git_ps1()
-      {
-        : # Git is not installed so stub out function
-      }
-    fi
-
-    # Set terminal colours
-    BASE03=$(tput setaf 234)
-    BASE02=$(tput setaf 235)
-    BASE01=$(tput setaf 240)
-    BASE00=$(tput setaf 241)
-    BASE0=$(tput setaf 244)
-    BASE1=$(tput setaf 245)
-    BASE2=$(tput setaf 254)
-    BASE3=$(tput setaf 230)
-    YELLOW=$(tput setaf 136)
-    ORANGE=$(tput setaf 166)
-    RED=$(tput setaf 160)
-    MAGENTA=$(tput setaf 125)
-    VIOLET=$(tput setaf 61)
-    BLUE=$(tput setaf 33)
-    CYAN=$(tput setaf 37)
-    GREEN=$(tput setaf 64)
-    BOLD=$(tput bold)
-    RESET=$(tput sgr0)
-
-    # If we're root, then let's see red
-    if [ ${EUID} -eq 0 ] ; then
-      USER_COLOUR="${RED}"
-    else
-      USER_COLOUR="${GREEN}"
-    fi
-    
-    # Check if we're local or remote
-    if [[ -n "${SSH_CLIENT}" || -n "${SSH_TTY}" ]] ; then
-      # Prompt with hostname
-      export PS1="\[${RESET}\][\[${BASE0}\]\A\[${RESET}\] \[${USER_COLOUR}\]\u@\h \[${CYAN}\]\w\[${YELLOW}\]\$(__git_ps1 \" (%s)\")\[${RESET}\]]\\$\[${RESET}\] "
-    else
-      # Just prompt
-      export PS1="\[${RESET}\][\[${BASE0}\]\A\[${RESET}\] \[${USER_COLOUR}\]\u \[${CYAN}\]\w\[${YELLOW}\]\$(__git_ps1 \" (%s)\")\[${RESET}\]]\\$\[${RESET}\] "
-    fi
-    
     # Set terminal working directory length for use in PS1
     PROMPT_DIRTRIM=2
-
+    PROMPT_COMMAND=main_prompt
 fi
