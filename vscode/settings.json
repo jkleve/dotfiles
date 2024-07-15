@@ -10,6 +10,7 @@
     "cloudcode.kubeconfigs": [],
     "C_Cpp.intelliSenseEngine": "disabled",
     "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook",
         "*.md": "vscode.markdown.preview.editor"
       }
 }
