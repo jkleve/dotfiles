@@ -12,5 +12,15 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook",
         "*.md": "vscode.markdown.preview.editor"
-      }
+    },
+    "recommendations": [
+        "github.copilot"
+    ],
+    "python.analysis.stubPath": "",
+    "python.languageServer": "None",
+    "editor.minimap.enabled": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "remote.SSH.remotePlatform": {
+        "*.gitpod.io": "linux"
+    },
 }

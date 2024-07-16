@@ -11,13 +11,36 @@
             "runOn": "folderOpen",
         },
         "presentation": {
-            "echo": true,
-            "reveal": "silent",
+            "echo": false,
+            "reveal": "never",
             "focus": false,
             "panel": "shared",
             "showReuseMessage": false,
             "clear": false,
         }
+      },
+      {
+        "label": "Install Copilot",
+        "type": "shell",
+        "command": "code --install-extension github.copilot",
+        "runOptions": {
+          "runOn": "folderOpen"
+        },
+        "presentation": {
+          "reveal": "silent"
+        }
       }
+      // https://stackoverflow.com/a/77144584
+      // {
+      //   "label": "Install All Recommended Extensions",
+      //   "type": "shell",
+      //   "command": "jq -r '.recommendations[]' ./.vscode/extensions.json | xargs -L 1 code --install-extension",
+      //   "runOptions": {
+      //     "runOn": "folderOpen"
+      //   },
+      //   "presentation": {
+      //     "reveal": "silent"
+      //   }
+      // }
     ]
   }
