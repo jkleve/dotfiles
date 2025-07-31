@@ -27,7 +27,8 @@
           "runOn": "folderOpen"
         },
         "presentation": {
-          "reveal": "silent"
+          "reveal": "silent",
+          "close": true
         }
       }
       // https://stackoverflow.com/a/77144584
