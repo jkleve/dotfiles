@@ -117,6 +117,8 @@ alias k="kubectl"
 alias d="docker"
 alias dc="docker-compose"
 
+alias code202="code --folder-uri vscode-remote://ssh-remote+chisrvdev202/build/jkleve/Harbor"
+
 #############
 # Functions #
 #############
