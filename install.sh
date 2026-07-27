@@ -36,7 +36,7 @@ main() {
     echo "export DOTFILES=$DOTFILES_DIR" >> .zsh_local
 
     mkdir -p ~/.claude
-    ln -sf "$dotfiles_dir"/.claude/settings.json .claude/settings.json
+    ln -sf "$dotfiles_dir"/claude/settings.json .claude/settings.json
 }
 
 main
