@@ -81,7 +81,7 @@
   "skipAutoPermissionPrompt": true,
   "statusLine": {
     "type": "command",
-    "command": "bash /home/gitpod/.private-dotfiles/.claude/statusline-command.sh"
+    "command": "bash /home/jkleve/.dotfiles/claude/statusline-command.sh"
   }
 }
 
