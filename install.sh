@@ -34,6 +34,9 @@ main() {
     echo "source ${DOTFILES_DIR}/bash/bashrc.bash" >> ${HOME}/.bashrc
     echo "export DOTFILES=$DOTFILES_DIR" >> .bash_local
     echo "export DOTFILES=$DOTFILES_DIR" >> .zsh_local
+
+    mkdir -p ~/.claude
+    ln -sf "$dotfiles_dir"/.claude/settings.json .claude/settings.json
 }
 
 main
