@@ -73,15 +73,19 @@
     ],
     "deny": []
   },
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/jkleve/.dotfiles/claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
   "tui": "fullscreen",
   "autoCompactEnabled": true,
   "fileCheckpointingEnabled": true,
   "showTurnDuration": true,
   "showMessageTimestamps": true,
-  "skipAutoPermissionPrompt": true,
-  "statusLine": {
-    "type": "command",
-    "command": "bash /home/jkleve/.dotfiles/claude/statusline-command.sh"
-  }
+  "skipAutoPermissionPrompt": true
 }
-

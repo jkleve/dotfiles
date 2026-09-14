@@ -7,6 +7,7 @@ input=$(cat)
 user=$(whoami)
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
 model=$(echo "$input" | jq -r '.model.display_name // empty')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // empty')
 ctx_size=$(echo "$input" | jq -r '.context_window.context_window_size // empty')
@@ -23,6 +24,11 @@ status=$(printf "${GREEN}%s${RESET} ${BLUE}%s${RESET}" "$user" "$cwd")
 # Append model name if available
 if [ -n "$model" ]; then
   status="$status ${DIM}[$model]${RESET}"
+fi
+
+# Append effort level if the model supports it
+if [ -n "$effort" ]; then
+  status="$status ${DIM}effort:${effort}${RESET}"
 fi
 
 # Append context size information if available
