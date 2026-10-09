@@ -106,9 +106,6 @@ setopt inc_append_history
 
 export TZ=America/Denver
 
-set -g default-terminal "tmux-256color"
-set -ag terminal-overrides ",xterm-256color:RGB"
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
