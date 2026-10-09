@@ -54,3 +54,5 @@ alias rsync-update="rsync -avzu --progress -h"
 alias rsync-sync="rsync -avzu --delete --progress -h"
 
 alias k=kubectl
+
+alias code202="code --folder-uri=vscode-remote://ssh-remote+chisrvdev202/build/jkleve/Harbor"
