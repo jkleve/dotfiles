@@ -69,9 +69,37 @@
       "Bash(./ci.sh:*)",
       "Bash(./iac/ci-cd/format.sh:*)",
       "Bash(./iac/ci-cd/lint.sh:*)",
-      "Bash(./iac/ci-cd/test.sh:*)"
+      "Bash(./iac/ci-cd/test.sh:*)",
+      "mcp__bt-tools__*"
     ],
-    "deny": []
+    "deny": [],
+    "ask": [
+      "mcp__bt-tools__bigquery_authorize",
+      "mcp__bt-tools__bigquery_disconnect",
+      "mcp__bt-tools__bigquery_set_project",
+      "mcp__bt-tools__credential_register",
+      "mcp__bt-tools__credential_remove",
+      "mcp__bt-tools__monday_add_update",
+      "mcp__bt-tools__monday_create_item",
+      "mcp__bt-tools__monday_update_item",
+      "mcp__bt-tools__redmine_attach_file",
+      "mcp__bt-tools__redmine_create_issue",
+      "mcp__bt-tools__redmine_update_issue"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.dotfiles/claude/hooks/teams_notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   },
   "model": "sonnet",
   "statusLine": {
@@ -79,9 +107,33 @@
     "command": "bash /home/jkleve/.dotfiles/claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "clangd-lsp@claude-plugins-official": true
+    "clangd-lsp@claude-plugins-official": true,
+    "hydra@belvedere-trading": true
   },
+  "extraKnownMarketplaces": {
+    "belvedere-trading": {
+      "source": {
+        "source": "git",
+        "url": "git@gitlab.com:belvederetrading/private/claude-code.git"
+      }
+    }
+  },
+  "outputStyle": "Concise",
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "tui": "fullscreen",
   "autoCompactEnabled": true,
   "fileCheckpointingEnabled": true,
