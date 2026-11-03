@@ -104,7 +104,7 @@
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "bash /home/jkleve/.dotfiles/claude/statusline-command.sh"
+    "command": "bash ~/.dotfiles/claude/statusline.sh"
   },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
