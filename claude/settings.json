@@ -85,7 +85,8 @@
       "mcp__bt-tools__redmine_attach_file",
       "mcp__bt-tools__redmine_create_issue",
       "mcp__bt-tools__redmine_update_issue"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "hooks": {
     "Notification": [
